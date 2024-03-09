@@ -2,19 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class apptheme {
-  static Color primarycolor = const Color(0xff5D9CEC);
-  static Color backgroundcolorlight = const Color(0xffDFECDB);
-  static Color backgroundcolordark = const Color(0xff060E1F);
-  static Color greencolor = const Color(0xff61E757);
-  static Color redcolor = const Color(0xffEC4B4B);
-  static Color greycolor = const Color(0xffC8C9CB);
+  static Color primarycolor = Color(0xff5D9CEC);
+  static Color backgroundcolorlight = Color(0xffDFECDB);
+  static Color backgroundcolordark = Color(0xff060E1F);
+  static Color greencolor = Color(0xff61E757);
+  static Color redcolor = Color(0xffEC4B4B);
+  static Color greycolor = Color(0xffC8C9CB);
 
   static ThemeData lighttheme = ThemeData(
-      appBarTheme: AppBarTheme(
-          backgroundColor: primarycolor,
-          centerTitle: true,
-          elevation: 0,
-          iconTheme: const IconThemeData(color: Colors.white)),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: primarycolor,
           iconSize: 30,
@@ -31,6 +26,9 @@ class apptheme {
           bodySmall: GoogleFonts.poppins(
               fontWeight: FontWeight.w700, fontSize: 16, color: Colors.black)),
       scaffoldBackgroundColor: backgroundcolorlight,
+      appBarTheme: AppBarTheme(
+        backgroundColor: primarycolor,
+      ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: primarycolor,
         unselectedItemColor: greycolor,

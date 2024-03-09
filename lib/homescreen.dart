@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:todo/tabs/settings/settings.dart';
 import 'package:todo/tabs/tasks/tasktab.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
@@ -26,25 +26,41 @@ class _HomeScreenState extends State<HomeScreen> {
     ];
 
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+              context: context, builder: (context) => Container());
+        },
+        child: Icon(Icons.add),
+      ),
       appBar: AppBar(
+        titleTextStyle: Theme.of(context).textTheme.bodyLarge,
+        elevation: 0,
+        backgroundColor: Theme.of(context).primaryColor,
         title: Padding(
-          padding: const EdgeInsetsDirectional.only(start: 20.0),
+          padding: const EdgeInsetsDirectional.only(start: 22),
           child: Text(appbartitles[selectedindex]),
         ),
       ),
       body: tabs[selectedindex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: selectedindex,
-        onTap: (index) {
-          setState(() {
+      bottomNavigationBar: BottomAppBar(
+        notchMargin: 8,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        color: Colors.white,
+        shape: CircularNotchedRectangle(),
+        child: BottomNavigationBar(
+          currentIndex: selectedindex,
+          onTap: (index) {
             selectedindex = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Tasks'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings_outlined), label: 'Settings'),
-        ],
+            setState(() {});
+          },
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.list), label: 'list'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings_outlined), label: 'settings'),
+          ],
+        ),
       ),
     );
   }
