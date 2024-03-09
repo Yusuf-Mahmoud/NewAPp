@@ -33,6 +33,7 @@ dependencies:
   flutter_native_splash: ^2.3.10
   provider: ^6.1.2
   google_fonts: ^6.2.1
+  flutter_timeline_calendar: ^1.0.9
   flutter_localizations:
    sdk: flutter
   intl: ^0.18.0

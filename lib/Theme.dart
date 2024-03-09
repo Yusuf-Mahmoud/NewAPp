@@ -10,6 +10,11 @@ class apptheme {
   static Color greycolor = const Color(0xffC8C9CB);
 
   static ThemeData lighttheme = ThemeData(
+      appBarTheme: AppBarTheme(
+          backgroundColor: primarycolor,
+          centerTitle: true,
+          elevation: 0,
+          iconTheme: const IconThemeData(color: Colors.white)),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: primarycolor,
           iconSize: 30,

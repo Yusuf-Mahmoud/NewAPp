@@ -23,7 +23,7 @@ class TodoApp extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale(settingProvider.language),
       routes: {HomeScreen.routeName: (_) => HomeScreen()},
-      initialRoute: HomeScreen.routeName,
+      home: HomeScreen(),
     );
   }
 }
