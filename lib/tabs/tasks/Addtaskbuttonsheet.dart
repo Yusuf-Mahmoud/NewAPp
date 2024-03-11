@@ -6,8 +6,8 @@ class AddTaskBottomsheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height * 0.5,
       padding: const EdgeInsets.all(12),
-      width: double.infinity,
       child: Column(
         children: [
           Text(
@@ -40,9 +40,11 @@ class AddTaskBottomsheet extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-          defbuttons(),
+          defbuttons(label: "Add Task", onprssed: addtask),
         ],
       ),
     );
   }
+
+  void addtask() {}
 }
