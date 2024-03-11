@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AddTaskBottonSheet extends StatelessWidget {
+class AddTaskBottomsheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [Text("Add NEw Task")],
-    );
+    return Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(12),
+        child: Column(
+          children: [Text("Add New Task")],
+        ));
   }
 }

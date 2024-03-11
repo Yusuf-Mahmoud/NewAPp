@@ -4,6 +4,7 @@ import 'package:flutter_timeline_calendar/timeline/model/day_options.dart';
 import 'package:flutter_timeline_calendar/timeline/model/headers_options.dart';
 import 'package:flutter_timeline_calendar/timeline/utils/calendar_types.dart';
 import 'package:flutter_timeline_calendar/timeline/widget/timeline_calendar.dart';
+import 'package:todo/Theme.dart';
 import 'package:todo/tabs/tasks/taskitem.dart';
 
 class tasktab extends StatelessWidget {
@@ -24,13 +25,13 @@ class tasktab extends StatelessWidget {
           ),
           dayOptions: DayOptions(
               compactMode: true,
-              weekDaySelectedColor: Theme.of(context).primaryColor,
-              selectedBackgroundColor: Theme.of(context).primaryColor,
+              weekDaySelectedColor: yusuf.primarycolor,
+              selectedBackgroundColor: yusuf.primarycolor,
               disableDaysBeforeNow: true),
           headerOptions: HeaderOptions(
               weekDayStringType: WeekDayStringTypes.SHORT,
               monthStringType: MonthStringTypes.FULL,
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: yusuf.primarycolor,
               headerTextColor: Colors.black),
           onChangeDateTime: (datetime) {
             print(datetime.getDate());

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class apptheme {
+class yusuf {
   static Color primarycolor = Color(0xff5D9CEC);
   static Color backgroundcolorlight = Color(0xffDFECDB);
   static Color backgroundcolordark = Color(0xff060E1F);

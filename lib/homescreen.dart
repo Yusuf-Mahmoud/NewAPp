@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:todo/Theme.dart';
 import 'package:todo/tabs/settings/settings.dart';
+import 'package:todo/tabs/tasks/Addtaskbuttonsheet.dart';
 import 'package:todo/tabs/tasks/tasktab.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,14 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
-              context: context, builder: (context) => Container());
+              context: context, builder: (_) => AddTaskBottomsheet());
         },
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
         titleTextStyle: Theme.of(context).textTheme.bodyLarge,
         elevation: 0,
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: yusuf.primarycolor,
         title: Padding(
           padding: const EdgeInsetsDirectional.only(start: 22),
           child: Text(appbartitles[selectedindex]),

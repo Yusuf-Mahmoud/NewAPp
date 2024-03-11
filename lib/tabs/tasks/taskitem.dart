@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/Theme.dart';
 
 class taskitem extends StatelessWidget {
   const taskitem({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class taskitem extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            color: Theme.of(context).primaryColor,
+            color: yusuf.primarycolor,
             width: 4,
             height: 62,
           ),
@@ -35,7 +36,7 @@ class taskitem extends StatelessWidget {
           const Spacer(),
           Container(
             decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
+                color: yusuf.primarycolor,
                 borderRadius: BorderRadius.circular(10)),
             child: Image.asset(
               "assets/images/Icon awesome-check.png",
