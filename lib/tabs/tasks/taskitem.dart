@@ -37,11 +37,11 @@ class taskitem extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
                 color: yusuf.primarycolor,
-                borderRadius: BorderRadius.circular(10)),
+                borderRadius: BorderRadius.circular(12)),
             child: Image.asset(
-              "assets/images/Icon awesome-check.png",
-              width: 69,
-              height: 34,
+              "assets/images/icon_check.png",
+              width: 75,
+              height: 35,
             ),
           )
         ],
