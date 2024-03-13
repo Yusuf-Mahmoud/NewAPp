@@ -45,7 +45,7 @@ class _AddTaskBottomsheetState extends State<AddTaskBottomsheet> {
                 alignment: Alignment.centerLeft,
                 child: Text('select date',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: const Color(0xff383838),
+                          color: Colors.black,
                         ))),
             InkWell(
               onTap: () async {

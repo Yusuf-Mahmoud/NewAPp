@@ -18,7 +18,7 @@ class defbuttons extends StatelessWidget {
         child: Text(
           label,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Colors.white,
+                color: Colors.black,
               ),
         ));
   }
