@@ -2,16 +2,22 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:todo/models/models.dart';
 
 class FirebaseUtils {
-  getTasksCollections() =>
-      FirebaseFirestore.instance.collection('tasks').withConverter<taskmodel>(
+  static CollectionReference<TaskModel> getTasksCollections() =>
+      FirebaseFirestore.instance.collection('tasks').withConverter<TaskModel>(
           fromFirestore: (snapshot, options) =>
-              taskmodel.fromjson(snapshot.data()!),
-          toFirestore: (taskmodel, options) => taskmodel.toJson());
+              TaskModel.fromjson(snapshot.data()!),
+          toFirestore: (TaskModel, _) => TaskModel.toJson());
 
-  void addtasktofirestore(taskmodel task) {}
-  List<taskmodel> getAllTasksFromFirestore() {
+  static Future<void> addtasktofirestore(TaskModel task) {
+    final taskCollection = getTasksCollections();
+    final doc = taskCollection.doc();
+    task.id = doc.id;
+    return doc.set(task);
+  }
+
+  static List<TaskModel> getAllTasksFromFirestore() {
     return [];
   }
 
-  void deletetaskfromfirestore(String taskid) {}
+  static deletetaskfromfirestore(String taskid) {}
 }

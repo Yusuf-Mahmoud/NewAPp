@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:todo/firebase_utils.dart';
 import 'package:todo/tabs/tasks/defTextformfield.dart';
 import 'package:todo/tabs/tasks/defbuttons.dart';
+
+import '../../models/models.dart';
 
 class AddTaskBottomsheet extends StatefulWidget {
   @override
@@ -73,5 +76,17 @@ class _AddTaskBottomsheetState extends State<AddTaskBottomsheet> {
     );
   }
 
-  void addtask() {}
+  void addtask() {
+    FirebaseUtils.addtasktofirestore(
+      TaskModel(
+        title: titlecontroller.text,
+        describtion: describtioncontroller.text,
+        dateTime: selectedDate,
+      ),
+    ).timeout(const Duration(milliseconds: 500), onTimeout: () {
+      print('Success');
+    }).catchError((_) {
+      print('Error try again!');
+    });
+  }
 }
