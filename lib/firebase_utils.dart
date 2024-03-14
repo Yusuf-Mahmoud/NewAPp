@@ -15,8 +15,10 @@ class FirebaseUtils {
     return doc.set(task);
   }
 
-  static List<TaskModel> getAllTasksFromFirestore() {
-    return [];
+  static Future<List<TaskModel>> getAllTasksFromFirestore() async {
+    final tasksCollection = getTasksCollections();
+    final querySnapshot = await tasksCollection.get();
+    return querySnapshot.docs.map((doc) => doc.data()).toList();
   }
 
   static deletetaskfromfirestore(String taskid) {}

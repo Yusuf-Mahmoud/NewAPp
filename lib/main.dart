@@ -6,13 +6,20 @@ import 'package:provider/provider.dart';
 import 'package:todo/Theme.dart';
 import 'package:todo/homescreen.dart';
 import 'package:todo/tabs/settings/setting_provider.dart';
+import 'package:todo/tabs/tasks/task_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await FirebaseFirestore.instance.disableNetwork();
-  runApp(ChangeNotifierProvider(
-      create: (_) => SettingProvider(), child: TodoApp()));
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_) => SettingProvider()),
+      ChangeNotifierProvider(
+        create: (_) => TaskProvider(),
+      )
+    ], child: TodoApp()),
+  );
 }
 
 class TodoApp extends StatelessWidget {

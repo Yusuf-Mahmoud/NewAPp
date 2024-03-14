@@ -4,12 +4,16 @@ import 'package:flutter_timeline_calendar/timeline/model/day_options.dart';
 import 'package:flutter_timeline_calendar/timeline/model/headers_options.dart';
 import 'package:flutter_timeline_calendar/timeline/utils/calendar_types.dart';
 import 'package:flutter_timeline_calendar/timeline/widget/timeline_calendar.dart';
+import 'package:provider/provider.dart';
 import 'package:todo/Theme.dart';
+import 'package:todo/tabs/tasks/task_provider.dart';
 import 'package:todo/tabs/tasks/taskitem.dart';
 
 class tasktab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final taskprovider = Provider.of<TaskProvider>(context);
+    taskprovider.getTask();
     return Scaffold(
         body: Column(
       children: [
@@ -37,10 +41,13 @@ class tasktab extends StatelessWidget {
             print(datetime.getDate());
           },
         ),
+        const SizedBox(
+          height: 8,
+        ),
         Expanded(
             child: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (context, index) => const taskitem(),
+          itemCount: taskprovider.tasks.length,
+          itemBuilder: (_, index) => taskitem(taskprovider.tasks[index]),
         ))
       ],
     ));

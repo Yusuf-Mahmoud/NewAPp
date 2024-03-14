@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:todo/Theme.dart';
+import 'package:todo/models/models.dart';
 
 class taskitem extends StatelessWidget {
-  const taskitem({Key? key}) : super(key: key);
-
+  final TaskModel task;
+  const taskitem(this.task);
   @override
   Widget build(BuildContext context) {
     return Container(

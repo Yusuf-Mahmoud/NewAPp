@@ -88,5 +88,6 @@ class _AddTaskBottomsheetState extends State<AddTaskBottomsheet> {
     }).catchError((_) {
       print('Error try again!');
     });
+    Navigator.of(context).pop();
   }
 }
